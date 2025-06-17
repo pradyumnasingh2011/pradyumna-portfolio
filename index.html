@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pradyumna Singh | Portfolio</title>
   <style>
     * {
@@ -12,92 +12,113 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      background: linear-gradient(120deg, #2c3e50, #3498db);
+      color: #fff;
       line-height: 1.6;
     }
     header {
-      background: #222;
-      color: #fff;
-      padding: 20px 0;
       text-align: center;
+      padding: 50px 20px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #dfe6e9;
     }
     nav ul {
       list-style: none;
-      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+      padding: 0;
     }
     nav ul li {
-      display: inline;
       margin: 0 15px;
     }
     nav ul li a {
       color: #fff;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffcc00;
     }
     section {
-      padding: 30px;
+      padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
     h2 {
-      margin-bottom: 10px;
-      color: #444;
+      color: #ffcc00;
+      margin-bottom: 15px;
     }
-    ul {
+    ul.skills {
+      list-style: square;
       margin-left: 20px;
-      margin-bottom: 20px;
+      color: #ecf0f1;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background: #222;
-      color: white;
-      margin-top: 30px;
+      background: rgba(0,0,0,0.2);
+      font-size: 0.9em;
+      color: #dcdde1;
     }
     @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav ul {
+        flex-direction: column;
+      }
       nav ul li {
-        display: block;
         margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Pradyumna Singh</h1>
-    <p>Student | Arduino Enthusiast | Developer</p>
+    <p>Student | Arduino Enthusiast | Web Developer</p>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
-  
         <li><a href="#skills">Skills</a></li>
-      
+        <li><a href="#projects">Projects</a></li>
       </ul>
     </nav>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi! I'm Pradyumna Singh, a Class 9 student at Delhi Public School, Etawah. I'm passionate about coding, Arduino, and building things that solve problems or just spark curiosity!</p>
+    <p>Hello! I'm Pradyumna, a Class 9 student at DPS Etawah. I love to build and experiment with technology, especially using Arduino, Python, and web design. This portfolio is my small corner on the web to showcase what I do.</p>
   </section>
-
-
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Arduino Programming</li>
-      <li>Python (Tkinter)</li>
-      <li>HTML/CSS Web Design</li>
-      <li>Creative Writing</li>
-      <li>Typing & Document Formatting</li>
+    <ul class="skills">
+      <li>Arduino Projects & Circuits</li>
+      <li>Python with Tkinter GUI</li>
+      <li>HTML, CSS Web Design</li>
+      <li>Typing & Content Writing</li>
+      <li>Basic JavaScript (Coming Soon!)</li>
     </ul>
   </section>
 
-
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Coming soon: Smart Calculator, Arduino Transmitter, and more!</p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Pradyumna Singh. Made with ❤️ in India.</p>
+    &copy; 2025 Pradyumna Singh. Hosted with ❤️ on GitHub Pages.
   </footer>
+
 </body>
 </html>
