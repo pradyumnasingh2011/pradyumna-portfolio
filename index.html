@@ -1,124 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pradyumna Singh | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(120deg, #2c3e50, #3498db);
-      color: #fff;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 50px 20px 20px;
-    }
-    header h1 {
-      font-size: 3em;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #dfe6e9;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 20px 0;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #ffcc00;
-      margin-bottom: 15px;
-    }
-    ul.skills {
-      list-style: square;
-      margin-left: 20px;
-      color: #ecf0f1;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.2);
-      font-size: 0.9em;
-      color: #dcdde1;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-      nav ul {
-        flex-direction: column;
-      }
-      nav ul li {
-        margin: 10px 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pradyumna Singh | Futuristic Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  @keyframes glow {
+    0% { text-shadow: 0 0 5px #0ff, 0 0 15px #0ff; }
+    50% { text-shadow: 0 0 20px #0ff, 0 0 30px #0ff; }
+    100% { text-shadow: 0 0 5px #0ff, 0 0 15px #0ff; }
+  }
+  header {
+    text-align: center;
+    padding: 50px 20px 20px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  header h1 {
+    font-size: 3em;
+    background: linear-gradient(90deg, #0ff, #ff00c3, #0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s infinite;
+  }
+  header p { font-size: 1.2em; color: #dfe6e9; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 0;
+  }
+  nav ul li { margin: 0 15px; }
+  nav ul li a {
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 1px solid #0ff;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  nav ul li a:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  }
+  section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    animation: fadeIn 1s ease-in-out;
+  }
+  h2 { color: #0ff; margin-bottom: 15px; text-align: center; }
+  ul.skills {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 0;
+  }
+  ul.skills li {
+    background: rgba(0, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+  }
+  ul.skills li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff;
+  }
+  .project-card {
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #0ff;
+  }
+  .project-card h3 { color: #ffcc00; margin-bottom: 10px; }
+  .project-card p { color: #ecf0f1; }
+  .project-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  .project-list li {
+    background: rgba(0, 255, 255, 0.05);
+    margin: 5px 0;
+    padding: 8px;
+    border-left: 4px solid #0ff;
+    transition: background 0.3s;
+  }
+  .project-list li:hover {
+    background: rgba(0, 255, 255, 0.2);
+  }
+  .project-links a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 8px 15px;
+    border: 1px solid #0ff;
+    color: #0ff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .project-links a:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 15px #0ff;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+    font-size: 0.9em;
+    color: #dcdde1;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Pradyumna Singh</h1>
-    <p>Student | Arduino Enthusiast | Web Developer</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Pradyumna, a Class 9 student at DPS Etawah. I love to build and experiment with technology, especially using Arduino, Python, and web design. This portfolio is my small corner on the web to showcase what I do.</p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>Arduino Projects & Circuits</li>
-      <li>Python with Tkinter GUI</li>
-      <li>HTML, CSS Web Design</li>
-      <li>Typing & Content Writing</li>
-      <li>Basic JavaScript (Coming Soon!)</li>
+<header>
+  <h1>Pradyumna Singh</h1>
+  <p>Student | Arduino Enthusiast | Web Developer</p>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
     </ul>
-  </section>
+  </nav>
+</header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Coming soon: Smart Calculator, Arduino Transmitter, and more!</p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello! I'm Pradyumna, a Class 9 student at DPS Etawah. I love building and experimenting with technology, especially using Arduino, Python, and web design. This portfolio is my digital showcase of my work.</p>
+</section>
 
-  <footer>
-    &copy; 2025 Pradyumna Singh. Hosted with ❤️ on GitHub Pages.
-  </footer>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Arduino Projects & Circuits</li>
+    <li>Python with Tkinter GUI</li>
+    <li>HTML, CSS Web Design</li>
+    <li>Typing & Content Writing</li>
+    <li>Basic JavaScript (Coming Soon!)</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>🎮 Python Games Collection</h3>
+    <p>A pack of Python-based games built with Pygame, including a chess bot, snake game, and more. Each game has clean visuals and fun gameplay.</p>
+    <ul class="project-list">
+      <li>♟️ Pygame Chess with Bot</li>
+      <li>🐍 Snake Game</li>
+      <li>🎯 Shooting Game</li>
+      <li>🏎️ Racing Game</li>
+      <li>🎲 Other Mini Games</li>
+    </ul>
+    <div class="project-links">
+      <a href="downloads/pygame_chess_stage_1.zip" download>⬇ Download All</a>
+      <a href="https://github.com/YOUR_USERNAME/python_games_pack" target="_blank">🔗 View on GitHub</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  &copy; 2025 Pradyumna Singh. Hosted with ❤️ on GitHub Pages.
+</footer>
 
 </body>
 </html>
