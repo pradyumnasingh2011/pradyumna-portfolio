@@ -5,32 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Pradyumna Singh | Futuristic Portfolio</title>
 <style>
+  /* --- All CSS is now inside the HTML file --- */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    background: #0a0a1a; /* Darker, more futuristic background */
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
   }
+  
+  /* --- New Animated Background --- */
+  .background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364, #0ff, #ff00c3);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   @keyframes glow {
     0% { text-shadow: 0 0 5px #0ff, 0 0 15px #0ff; }
     50% { text-shadow: 0 0 20px #0ff, 0 0 30px #0ff; }
     100% { text-shadow: 0 0 5px #0ff, 0 0 15px #0ff; }
   }
+  
   header {
     text-align: center;
     padding: 50px 20px 20px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4); /* Slightly more transparent */
+    position: relative; /* Needed for z-index to work with background */
   }
+  
   header h1 {
     font-size: 3em;
     background: linear-gradient(90deg, #0ff, #ff00c3, #0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glow 2s infinite;
+    cursor: pointer; /* Add cursor pointer for interaction */
   }
+  
+  /* --- New styling for interactive text --- */
+  .interactive-text .letter {
+      display: inline-block;
+      transition: transform 0.2s, color 0.2s;
+  }
+  
   header p { font-size: 1.2em; color: #dfe6e9; }
+  
   nav ul {
     list-style: none;
     display: flex;
@@ -39,7 +72,9 @@
     margin: 20px 0;
     padding: 0;
   }
+  
   nav ul li { margin: 0 15px; }
+  
   nav ul li a {
     color: #0ff;
     text-decoration: none;
@@ -48,19 +83,29 @@
     border: 1px solid #0ff;
     border-radius: 30px;
     transition: all 0.3s ease;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
   }
+  
   nav ul li a:hover {
     background: #0ff;
     color: #000;
     box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
   }
+  
   section {
     padding: 40px 20px;
     max-width: 1000px;
     margin: auto;
     animation: fadeIn 1s ease-in-out;
+    background: rgba(10, 10, 30, 0.6); /* Semi-transparent section background */
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
   }
+  
   h2 { color: #0ff; margin-bottom: 15px; text-align: center; }
+  
   ul.skills {
     list-style: none;
     display: grid;
@@ -68,47 +113,69 @@
     gap: 10px;
     padding: 0;
   }
+  
   ul.skills li {
     background: rgba(0, 255, 255, 0.1);
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     border: 1px solid rgba(0, 255, 255, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+  
   ul.skills li:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #0ff;
+    transform: scale(1.05) perspective(500px) rotateX(10deg);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
   }
+
+  /* --- New Badge for "Coming Soon" --- */
+  .badge {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 0.7em;
+      margin-left: 5px;
+      vertical-align: middle;
+      font-weight: bold;
+  }
+
   .project-card {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5); /* Darker project card */
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 30px;
     border: 1px solid rgba(0, 255, 255, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+  
   .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #0ff;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
   }
+  
   .project-card h3 { color: #ffcc00; margin-bottom: 10px; }
   .project-card p { color: #ecf0f1; }
+  
   .project-list {
     list-style: none;
     padding: 0;
     margin-top: 10px;
   }
+  
   .project-list li {
     background: rgba(0, 255, 255, 0.05);
     margin: 5px 0;
     padding: 8px;
     border-left: 4px solid #0ff;
-    transition: background 0.3s;
+    transition: background 0.3s, padding-left 0.3s;
   }
+  
   .project-list li:hover {
     background: rgba(0, 255, 255, 0.2);
+    padding-left: 15px;
   }
+  
   .project-links a {
     display: inline-block;
     margin-top: 10px;
@@ -120,18 +187,22 @@
     text-decoration: none;
     transition: all 0.3s ease;
   }
+  
   .project-links a:hover {
     background: #0ff;
     color: #000;
     box-shadow: 0 0 15px #0ff;
   }
+  
   footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.3);
     font-size: 0.9em;
     color: #dcdde1;
+    position: relative;
   }
+  
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -140,8 +211,11 @@
 </head>
 <body>
 
+<!-- New Animated Background -->
+<div class="background-animation"></div>
+
 <header>
-  <h1>Pradyumna Singh</h1>
+  <h1 class="interactive-text">Pradyumna Singh</h1>
   <p>Student | Arduino Enthusiast | Web Developer</p>
   <nav>
     <ul>
@@ -164,7 +238,7 @@
     <li>Python with Tkinter GUI</li>
     <li>HTML, CSS Web Design</li>
     <li>Typing & Content Writing</li>
-    <li>Basic JavaScript (Coming Soon!)</li>
+    <li>Basic JavaScript <span class="badge">Coming Soon!</span></li>
   </ul>
 </section>
 
@@ -192,6 +266,43 @@
   &copy; 2025 Pradyumna Singh. Hosted with ❤️ on GitHub Pages.
 </footer>
 
+<!-- Add anime.js for advanced animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  // JavaScript for interactive text is now inside the HTML
+  document.addEventListener('DOMContentLoaded', () => {
+    // Wrap each letter in a span for individual animation
+    const textWrapper = document.querySelector('.interactive-text');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    // Initial text animation on page load
+    anime.timeline({loop: false})
+      .add({
+        targets: '.interactive-text .letter',
+        translateX: [40,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 1200,
+        delay: (el, i) => 500 + 30 * i
+      });
+      
+    // Add hover effect to each letter
+    const letters = document.querySelectorAll('.interactive-text .letter');
+    letters.forEach(letter => {
+        letter.addEventListener('mouseover', () => {
+            anime({
+                targets: letter,
+                translateY: [0, -10, 0], // Move up and back down
+                scale: [1, 1.2, 1],      // Scale up and back down
+                color: ['#0ff', '#ff00c3', '#0ff'], // Change color
+                duration: 500,
+                easing: 'easeInOutSine'
+            });
+        });
+    });
+});
+</script>
+
 </body>
 </html>
-
